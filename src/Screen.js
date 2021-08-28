@@ -1,4 +1,5 @@
 import { Link, useParams } from "react-router-dom";
+import { motion } from "framer-motion";
 
 function Screen({ screens }) {
   const { id } = useParams();
@@ -16,7 +17,12 @@ function Screen({ screens }) {
   const isNavNext = nextScreen?.type === "Screen 2";
 
   return (
-    <div className={isNav ? "box nav-box" : "box"}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className={isNav ? "box nav-box" : "box"}
+    >
       {prevScreen && !isNav && (
         <Link to={`/screens/${currentId - 1}`} className="left">
           ←
@@ -44,7 +50,7 @@ function Screen({ screens }) {
           ))}
         </ul>
       )}
-    </div>
+    </motion.div>
   );
 }
 
