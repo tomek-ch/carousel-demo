@@ -1,0 +1,93 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  height: 100%;
+  width: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-weight: normal;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.box {
+  width: 100%;
+  height: 100%;
+  background-color: gray;
+  color: orangered;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.box h1 {
+  grid-row: 2/3;
+  grid-column: 2/3;
+  align-self: center;
+}
+
+.left {
+  grid-row: 2/3;
+  grid-column: 1/2;
+  display: grid;
+  place-content: center;
+}
+
+.right {
+  grid-row: 2/3;
+  grid-column: 3/4;
+  display: grid;
+  place-content: center;
+}
+
+.bottom {
+  grid-row: 3/4;
+  grid-column: 2/3;
+  display: grid;
+  place-content: center;
+}
+
+.nav-box {
+  grid-template-columns: unset;
+  grid-template-rows: unset;
+  place-content: center;
+}
+
+.nav-box h1 {
+  grid-column: unset;
+  grid-row: unset;
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+  width: 100%;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 1em;
+}
+
+.box a {
+  font-size: 3em;
+}

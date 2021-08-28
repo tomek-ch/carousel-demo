@@ -1,0 +1,39 @@
+[
+  {
+    "key": "bxn23444",
+    "screens": [
+      {
+        "1": "A",
+        "type": "Screen 1",
+        "links": [
+          2,
+          4
+        ]
+      },
+      {
+        "2": "B",
+        "type": "Screen 1",
+        "links": [
+          1,
+          3
+        ]
+      },
+      {
+        "3": "C",
+        "type": "Screen 1",
+        "links": [
+          2
+        ]
+      },
+      {
+        "4": "D",
+        "type": "Screen 2",
+        "links": [
+          1,
+          2,
+          3
+        ]
+      }
+    ]
+  }
+]
