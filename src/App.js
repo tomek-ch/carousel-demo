@@ -8,7 +8,7 @@ const screens = data[0].screens;
 export default function Home() {
   const location = useLocation();
   return (
-    <AnimatePresence exitBeforeEnter>
+    <AnimatePresence exitBeforeEnter initial={false}>
       <Switch location={location} key={location.pathname}>
         <Route exact path="/screens/:id">
           <Screen screens={screens} />
