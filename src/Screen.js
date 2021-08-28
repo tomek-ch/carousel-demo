@@ -12,9 +12,8 @@ function Screen({ screens }) {
   const prevScreen = screens[currentId - 2];
   const nextScreen = screens[currentId];
 
-  const navScreen = screens.find(({ type }) => type === "Screen 2");
-  const isNav = currentScreen === navScreen;
-  const isNavNext = navScreen === nextScreen;
+  const isNav = currentScreen?.type === "Screen 2";
+  const isNavNext = nextScreen?.type === "Screen 2";
 
   return (
     <div className={isNav ? "box nav-box" : "box"}>
