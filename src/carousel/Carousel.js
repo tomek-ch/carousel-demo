@@ -26,7 +26,7 @@ function Carousel({ children, animation }) {
     );
   }
 
-  return children;
+  return childrenArr[1];
 }
 
 export default Carousel;
