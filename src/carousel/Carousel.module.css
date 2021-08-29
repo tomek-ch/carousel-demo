@@ -1,0 +1,60 @@
+.wrapper {
+  overflow: hidden;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  animation-duration: 500ms;
+}
+
+.child {
+  width: 100vw;
+  height: 100vh;
+  flex-shrink: 0;
+}
+
+.left {
+  flex-direction: row-reverse;
+  animation-name: left;
+}
+
+.right {
+  flex-direction: row;
+  animation-name: right;
+}
+
+.top {
+  flex-direction: column-reverse;
+  animation-name: top;
+}
+
+.bottom {
+  flex-direction: column;
+  animation-name: bottom;
+}
+
+@keyframes left {
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+@keyframes right {
+  100% {
+    transform: translateX(-100vw);
+  }
+}
+
+@keyframes bottom {
+  100% {
+    transform: translateY(-100vh);
+  }
+}
+
+@keyframes top {
+  100% {
+    transform: translateY(100vh);
+  }
+}

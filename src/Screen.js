@@ -1,5 +1,4 @@
 import { Link, useParams } from "react-router-dom";
-import { motion } from "framer-motion";
 
 function Screen({ screens }) {
   const { id } = useParams();
@@ -17,15 +16,15 @@ function Screen({ screens }) {
   const isNavNext = nextScreen?.type === "Screen 2";
 
   return (
-    <motion.div
-      initial={{ scaleY: 0 }}
-      animate={{ scaleY: 1 }}
-      exit={{ scaleY: 0 }}
-      transition={{ duration: 0.5 }}
-      className={isNav ? "box nav-box" : "box"}
-    >
+    <div className={isNav ? "box nav-box" : "box"}>
       {prevScreen && !isNav && (
-        <Link to={`/screens/${currentId - 1}`} className="left">
+        <Link
+          to={{
+            pathname: `/screens/${currentId - 1}`,
+            state: { dir: "left" },
+          }}
+          className="left"
+        >
           ←
         </Link>
       )}
@@ -33,12 +32,24 @@ function Screen({ screens }) {
         {currentId}: {currentScreen[currentId]}
       </h1>
       {nextScreen && !isNav && !isNavNext && (
-        <Link to={`/screens/${currentId + 1}`} className="right">
+        <Link
+          to={{
+            pathname: `/screens/${currentId + 1}`,
+            state: { dir: "right" },
+          }}
+          className="right"
+        >
           →
         </Link>
       )}
       {currentId === 1 && (
-        <Link to={`/screens/${screens.length}`} className="bottom">
+        <Link
+          to={{
+            pathname: `/screens/${screens.length}`,
+            state: { dir: "bottom" },
+          }}
+          className="bottom"
+        >
           ↓
         </Link>
       )}
@@ -46,12 +57,16 @@ function Screen({ screens }) {
         <ul>
           {currentScreen.links.map((link) => (
             <li key={link}>
-              <Link to={`/screens/${link}`}>{link}</Link>
+              <Link
+                to={{ pathname: `/screens/${link}`, state: { dir: "top" } }}
+              >
+                {link}
+              </Link>
             </li>
           ))}
         </ul>
       )}
-    </motion.div>
+    </div>
   );
 }
 
