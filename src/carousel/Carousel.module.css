@@ -6,13 +6,24 @@
   width: 100vw;
   height: 100vh;
   display: flex;
-  animation-duration: 500ms;
+  animation-duration: 1000ms;
 }
 
 .child {
   width: 100vw;
   height: 100vh;
   flex-shrink: 0;
+}
+
+.child:first-child() {
+  animation: fade-out;
+  animation-duration: 1000ms;
+}
+
+@keyframes fade-out {
+  100% {
+    opacity: 0 !important;
+  }
 }
 
 .left {
